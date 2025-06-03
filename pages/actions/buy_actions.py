@@ -43,5 +43,5 @@ class BuyActions(BaseActions):
     def click_purchase(self):
         self.element_click(OrderForm.purchaseButton)
 
-    def displayed_alert(self):
+    def displayed_alert(self) -> bool:
         return self.is_displayed(OrderForm.successAlert)
