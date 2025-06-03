@@ -1,4 +1,4 @@
-Basado en Python 3.12
+Desarrollado en Python 3.12 dentro del IDE de Jetbrains Pycharm
 
 1. Instalar allure
     En Windows, dentro de PowerShell, correr los siguientes comandos:
