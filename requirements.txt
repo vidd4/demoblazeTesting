@@ -1,0 +1,2 @@
+allure-pytest-bdd==2.14.2
+selenium==4.33.0
