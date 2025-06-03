@@ -1,0 +1,9 @@
+1. El proceso de prueba se demostró que en el proceso de compra no existen errores críticos en la interfaz de usuario, sin embargo, los formularios
+pueden mejorar agregando validaciones de ingreso en los campos.
+
+2. Las pruebas de API fallaron principalmente debido a diferencias entre lo que el código esperaba y lo que realmente devuelve la API de Demoblaze.
+En el primer caso, al crear un nuevo usuario, la respuesta de la API no contenía datos en formato JSON como se esperaba, lo que causó un error
+al intentar verificar claves como "message" o "error". En los otros dos casos,
+al intentar registrar un usuario ya existente e iniciar sesión con credenciales incorrectas, la API respondió correctamente con un mensaje de error,
+pero usando la clave "errorMessage" en lugar de "error", lo que provocó que las aserciones no se cumplieran. Por lo tanto, es necesario ajustar las
+pruebas para considerar esta estructura real de las respuestas y validar primero que el contenido recibido sea un JSON antes de realizar las verificaciones.
