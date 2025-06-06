@@ -1,12 +1,11 @@
 import pytest
 import requests
 import uuid
-from pytest_bdd import scenarios, given, when, then
+from pytest_bdd import scenario, given, when, then
 import allure
 
 
 BASE_URL = "https://api.demoblaze.com"
-scenarios('../features/login_api.feature')
 
 
 unique_username = f"testuser_{uuid.uuid4().hex[:6]}"
@@ -17,8 +16,27 @@ invalid_password = "contraseña_mala"
 response_data = {}
 
 @allure.suite("Login API Suite")
-@allure.title("Test Login API")
-def test_login_api():
+@allure.title("Sign up a new user successfully")
+@scenario('login_api.feature', 'Sign up a new user successfully')
+def test_signup_new_user():
+    pass
+
+@allure.suite("Login API Suite")
+@allure.title("Sign up with an existing user")
+@scenario('login_api.feature', 'Sign up with an existing user')
+def test_signup_existing_user():
+    pass
+
+@allure.suite("Login API Suite")
+@allure.title("Log in with valid credentials")
+@scenario('login_api.feature', 'Log in with valid credentials')
+def test_login_valid():
+    pass
+
+@allure.suite("Login API Suite")
+@allure.title("Log in with invalid credentials")
+@scenario('login_api.feature', 'Log in with invalid credentials')
+def test_login_invalid():
     pass
 
 @pytest.fixture(scope="module")
