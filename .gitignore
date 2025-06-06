@@ -16,4 +16,4 @@ venv.bak/
 .idea/
 
 #Allure
-allure/
+allure-results/
