@@ -26,12 +26,37 @@ def open_homepage(buy):
 
 @allure.step("Seleccionar un producto")
 @when("I select a product")
+def select_first_product(buy):
+    buy.click_product1()
+
+
+@allure.step("Agregar el primer producto al carrito")
+@when("I add the first product to the cart")
+def add_to_cart(buy):
+    buy.click_add_cart()
+
+@allure.step("Aceptar la alerta de confirmación")
+@when("I accept the alert")
+def accept_alert(driver):
+    WebDriverWait(driver, 5).until(EC.alert_is_present())
+    alert = driver.switch_to.alert
+    alert.accept()
+
+
+@allure.step("Regresar a la página de inicio")
+@when("I return to home page")
+def return_to_home(buy):
+    buy.click_home()
+
+
+@allure.step("Seleccionar un segundo producto")
+@when("I select a second product")
 def select_product(buy):
-    buy.click_product()
+    buy.click_product2()
 
 
-@allure.step("Agregar el producto al carrito")
-@when("I add the product to the cart")
+@allure.step("Agregar el segundo producto al carrito")
+@when("I add the second product to the cart")
 def add_to_cart(buy):
     buy.click_add_cart()
 

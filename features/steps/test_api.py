@@ -21,11 +21,13 @@ response_data = {}
 def test_signup_new_user():
     pass
 
+
 @allure.suite("Login API Suite")
 @allure.title("Sign up with an existing user")
 @scenario('login_api.feature', 'Sign up with an existing user')
 def test_signup_existing_user():
     pass
+
 
 @allure.suite("Login API Suite")
 @allure.title("Log in with valid credentials")
@@ -33,11 +35,13 @@ def test_signup_existing_user():
 def test_login_valid():
     pass
 
+
 @allure.suite("Login API Suite")
 @allure.title("Log in with invalid credentials")
 @scenario('login_api.feature', 'Log in with invalid credentials')
 def test_login_invalid():
     pass
+
 
 @pytest.fixture(scope="module")
 def existing_user():

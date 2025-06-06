@@ -3,15 +3,20 @@ from pages.page_objects.home import Home
 from pages.page_objects.cart import Cart
 from pages.page_objects.products import Products
 from pages.page_objects.order_form import OrderForm
-from pages.page_objects.success_alert import SuccessAlert
 
 
 class BuyActions(BaseActions):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def click_product(self):
+    def click_product1(self):
         self.element_click(Home.productCard1)
+
+    def click_home(self):
+        self.element_click(Home.homeButton)
+
+    def click_product2(self):
+        self.element_click(Home.productCard2)
 
     def click_add_cart(self):
         self.element_click(Products.addCartButton)
