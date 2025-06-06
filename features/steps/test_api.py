@@ -104,6 +104,11 @@ def check_signup_success():
     res = response_data["response"]
     assert res.status_code == 200
     data = res.json()
+    allure.attach(
+        body=str(data),
+        name="Response",
+        attachment_type=allure.attachment_type.JSON
+    )
     assert "message" in data or "error" in data
 
 
@@ -113,7 +118,12 @@ def check_error():
     res = response_data["response"]
     assert res.status_code == 200
     data = res.json()
-    assert "error" in data
+    allure.attach(
+        body=str(data),
+        name="Response",
+        attachment_type=allure.attachment_type.JSON
+    )
+    assert "errorMessage" in data
 
 
 @allure.step("Debería recibir un token o mensaje de éxito")
@@ -122,4 +132,9 @@ def check_login_success():
     res = response_data["response"]
     assert res.status_code == 200
     data = res.json()
+    allure.attach(
+        body=str(data),
+        name="Response",
+        attachment_type=allure.attachment_type.JSON
+    )
     assert "token" in data or "message" in data
